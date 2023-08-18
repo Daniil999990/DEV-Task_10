@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+group 'com.example'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.flywaydb:flyway-core:9.21.1'
+    implementation 'com.h2database:h2:1.4.200'
+    implementation 'org.postgresql:postgresql:42.6.0'
+    implementation 'org.hibernate.orm:hibernate-core:6.2.7.Final'
+    testImplementation 'junit:junit:4.13.2'
+}
