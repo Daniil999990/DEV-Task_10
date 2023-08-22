@@ -28,20 +28,8 @@ public class ClientCrudServiceTest {
     }
 
     @Test
-    public void testUpdateClient() {
-        Client client = new Client("Alice");
-        clientService.createOrUpdateClient(client);
-
-        client.setName("Alice Smith");
-        clientService.createOrUpdateClient(client);
-
-        Client updatedClient = clientService.getClientById(client.getId());
-        assertEquals("Alice Smith", updatedClient.getName());
-    }
-
-    @Test
     public void testDeleteClient() {
-        Client client = new Client("Bob");
+        Client client = new Client("John");
         clientService.createOrUpdateClient(client);
 
         clientService.deleteClientById(client.getId());

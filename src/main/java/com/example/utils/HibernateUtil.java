@@ -14,7 +14,7 @@ public class HibernateUtil {
                 .addAnnotatedClass(Planet.class)
                 .buildSessionFactory();
     }
-    public static SessionFactory getConfiguration(){
+    public static SessionFactory getSessionFactory(){
         return sessionFactory;
     }
 }

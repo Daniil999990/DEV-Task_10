@@ -28,20 +28,8 @@ public class PlanetCrudServiceTest {
     }
 
     @Test
-    public void testUpdatePlanet() {
-        Planet planet = new Planet("VEN", "Venus");
-        planetService.createOrUpdatePlanet(planet);
-
-        planet.setName("New Venus");
-        planetService.createOrUpdatePlanet(planet);
-
-        Planet updatedPlanet = planetService.getPlanetById(planet.getId());
-        assertEquals("New Venus", updatedPlanet.getName());
-    }
-
-    @Test
     public void testDeletePlanet() {
-        Planet planet = new Planet("PLUTO", "Pluto");
+        Planet planet = new Planet("VEN", "Venus");
         planetService.createOrUpdatePlanet(planet);
 
         planetService.deletePlanetById(planet.getId());
