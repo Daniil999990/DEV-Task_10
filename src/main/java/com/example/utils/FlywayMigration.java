@@ -3,12 +3,14 @@ package com.example.utils;
 import org.flywaydb.core.Flyway;
 
 public class FlywayMigration {
-    public static void main(String[] args) {
-        Flyway flyway = Flyway.configure()
-                .dataSource("jdbc:h2:mem:testdb", "sa", "")
-                .locations("classpath:db/migration")
+    private final String url = CredentialsDatabase.getDatabaseUrl();
+    private final String username = CredentialsDatabase.getDatabaseUsername();
+    private final String password = CredentialsDatabase.getDatabasePassword();
+    public void migration(){
+        Flyway flyway = Flyway
+                .configure()
+                .dataSource(url, username, password)
                 .load();
-
         flyway.migrate();
     }
 }

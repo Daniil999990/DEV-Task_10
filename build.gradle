@@ -2,7 +2,8 @@ plugins {
     id 'java'
 }
 
-group 'com.example'
+group 'org.example'
+version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -10,7 +11,11 @@ repositories {
 
 dependencies {
     implementation 'org.flywaydb:flyway-core:9.21.1'
-    implementation 'com.h2database:h2:1.4.200'
-    implementation 'org.hibernate.orm:hibernate-core:6.2.7.Final'
+    runtimeOnly 'com.h2database:h2:1.4.200'
     testImplementation 'junit:junit:4.13.2'
+    implementation 'org.hibernate.orm:hibernate-core:6.2.7.Final'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }

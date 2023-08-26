@@ -1,26 +1,25 @@
 package com.example.dto;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
 @Table(name = "planet")
+@Entity
 public class Planet {
     @Id
+    @Column(nullable = false)
     private String id;
-
     private String name;
 
-    public Planet() {}
-
-    public Planet(String id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
